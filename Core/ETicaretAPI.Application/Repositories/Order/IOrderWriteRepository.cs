@@ -5,12 +5,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ETicaretAPI.Domain
+namespace ETicaretAPI.Application.Repositories
 {
-    public class Customer : BaseEntity
+    public interface IOrderWriteRepository :IWriteRepository<Order>
     {
-        public string Name { get; set; }
-
-        public ICollection<Order> orders;
     }
 }
