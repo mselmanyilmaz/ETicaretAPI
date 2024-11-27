@@ -18,48 +18,31 @@ namespace ETicaretAPI.API.Controllers
             _productWriteRepository = productWriteRepository;
         }
 
-        [HttpGet]
-        public async Task Get()
-        {
-            await _productWriteRepository.AddRangeAsync(
-            new()
-                {
-                    new()
-                    {
-                        Id = Guid.NewGuid(),
-                        Name = "Product1",
-                        Price = 100,
-                        CreatedAt = DateTime.UtcNow,
-                        Stock = 10
-                    },
-                    new()
-                    {
-                        Id = Guid.NewGuid(),
-                        Name = "Product2",
-                        Price = 200,
-                        CreatedAt = DateTime.UtcNow,
-                        Stock = 20
-                    },
-                    new()
-                    {
-                        Id = Guid.NewGuid(),
-                        Name = "Product3",
-                        Price = 300,
-                        CreatedAt = DateTime.UtcNow,
-                        Stock = 30
-                    }
-                }
-            );
+        //[HttpGet]
+        //public async Task Get()
+        //{
+        //    await _productWriteRepository.AddRangeAsync(
+        //    new()
+        //        {
+        //            new()
+        //            {
+        //                Name = "C Product",
+        //                Price = 1.500F,
+        //                Stock = 10,
+        //                CreatedAt = DateTime.UtcNow
+        //            }
+        //        }
+        //    );
 
-            await _productWriteRepository.SaveAsync();
-        }
+        //    await _productWriteRepository.SaveAsync();
+        //}
 
-        [HttpGet("{id}")]
-        public async Task<IActionResult> Get(string id)
-        {
-            Product product = await _productReadRepository.GetByIdAsync(id);
-            return Ok(product);
-        }
+        //[HttpGet("{id}")]
+        //public async Task<IActionResult> Get(string id)
+        //{
+        //    Product product = await _productReadRepository.GetByIdAsync(id);
+        //    return Ok(product);
+        //}
     }
 
 }
